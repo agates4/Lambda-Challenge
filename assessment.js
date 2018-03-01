@@ -31,7 +31,6 @@ function lambdaSchool(num) {
     else if (num % 3 == 0)
         return "Lambda"
     return num
-    
 }
 
 /*
@@ -45,8 +44,14 @@ function lambdaSchool(num) {
              longestString(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
 */
 
-function longestString() {
-
+function longestString(strs) {
+    longest = ""
+    for (let index = 0; index < strs.length; index++) {
+        const element = strs[index];
+        if (element.length > longest.length)
+            longest = element
+    }
+    return longest
 }
 
 /*
@@ -70,8 +75,13 @@ function longestString() {
              computeUserAverageAge(users); // returns 62 (This number is rounded up from 61.6666)
 */
 
-function computeUserAverageAge() {
-
+function computeUserAverageAge(users) {
+    totalAge = 0
+    for (let index = 0; index < users.length; index++) {
+        const element = users[index];
+        totalAge += element.age
+    }
+    return Math.round(totalAge / users.length)
 }
 
 module.exports = {
